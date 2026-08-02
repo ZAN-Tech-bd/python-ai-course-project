@@ -11,6 +11,7 @@ AI applications.
 | Project | Description |
 |---|---|
 | [AI chat bot](<AI chat bot>) | Bilingual (Bangla + English) RAG chatbot — TF-IDF retrieval over a JSON knowledge base, with optional Gemini API refinement. Streamlit UI. |
+| [Draw in air](<Draw in air>) | Draw on-screen with just your fingertip via webcam hand tracking (OpenCV + MediaPipe) — 2D toolset plus a 3D freehand mode (PyOpenGL/pygame). |
 | [Car sales prediction](<Car sales prediction>) | Terminal app that predicts a used car's selling price with a RandomForestRegressor trained on real CarDekho listing data. |
 | [Rain prediction](<Rain prediction>) | Terminal tool that predicts rain for any city using the free Open-Meteo API — no signup or key required. |
 | [Facial recognition](<Facial recognition>) | Placeholder — not yet implemented. |
