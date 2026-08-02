@@ -1,0 +1,40 @@
+[
+  {
+    "id": "1",
+    "title": "About this assistant",
+    "content": "This is a bilingual (Bangla and English) AI assistant. It answers questions using the knowledge stored in this JSON file. Add more entries from the sidebar to teach it new things.",
+    "tags": [
+      "intro",
+      "help"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "এই সহকারী সম্পর্কে",
+    "content": "এটি একটি দ্বিভাষিক (বাংলা ও ইংরেজি) এআই সহকারী। এটি এই জেসন ফাইলে সংরক্ষিত তথ্যের ভিত্তিতে প্রশ্নের উত্তর দেয়। নতুন তথ্য যোগ করতে সাইডবার ব্যবহার করুন।",
+    "tags": [
+      "পরিচিতি",
+      "সাহায্য"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "How to add data",
+    "content": "Use the 'Knowledge Base' section in the sidebar to add a title and content. You can also upload a JSON file with a list of {title, content, tags} objects, or export the current data as JSON.",
+    "tags": [
+      "data",
+      "json",
+      "help"
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Gemini refinement",
+    "content": "Paste a free Gemini API key in the sidebar (get one at https://aistudio.google.com/apikey) to let the assistant rewrite the retrieved answer into a more natural, fluent response in the language you asked in. Without a key, the assistant still answers using plain retrieval from the knowledge base.",
+    "tags": [
+      "gemini",
+      "api",
+      "help"
+    ]
+  }
+]
