@@ -1,5 +1,7 @@
 import sys
 
+MODE_ARGS = {"1": "2d", "2d": "2d", "2": "3d", "3d": "3d"}
+
 
 def print_menu():
     print("=" * 50)
@@ -11,34 +13,38 @@ def print_menu():
     print("=" * 50)
 
 
+def run_mode(mode):
+    """Runs one mode and returns the mode to open next (None goes back to the menu)."""
+    if mode == "2d":
+        from canvas2d import AirCanvas2D
+        return AirCanvas2D().run()
+    if mode == "3d":
+        from canvas3d import AirCanvas3D
+        return "2d" if AirCanvas3D().run() else None
+    return None
+
+
 def main():
-    choice = None
+    mode = None
     if len(sys.argv) > 1:
-        arg = sys.argv[1].lower().lstrip("-")
-        if arg == "2d":
-            choice = "1"
-        elif arg == "3d":
-            choice = "2"
+        mode = MODE_ARGS.get(sys.argv[1].lower().lstrip("-"))
 
     while True:
-        if choice is None:
+        if mode is None:
             print_menu()
-            choice = input("Select mode: ").strip().lower()
+            try:
+                choice = input("Select mode: ").strip().lower()
+            except EOFError:
+                choice = "q"
+            if choice in ("q", "quit", "exit"):
+                print("Goodbye!")
+                break
+            mode = MODE_ARGS.get(choice)
+            if mode is None:
+                print("Invalid choice.\n")
+                continue
 
-        if choice in ("1", "2d"):
-            from canvas2d import AirCanvas2D
-            go_3d = AirCanvas2D().run()
-            choice = "2" if go_3d else None
-        elif choice in ("2", "3d"):
-            from canvas3d import AirCanvas3D
-            go_2d = AirCanvas3D().run()
-            choice = "1" if go_2d else None
-        elif choice in ("q", "quit", "exit"):
-            print("Goodbye!")
-            break
-        else:
-            print("Invalid choice.\n")
-            choice = None
+        mode = run_mode(mode)
 
 
 if __name__ == "__main__":

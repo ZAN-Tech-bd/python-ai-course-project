@@ -46,22 +46,25 @@ decides what happens with your fingertip position:
 | Gesture | Hand shape | Effect |
 |---|---|---|
 | Draw | Index finger only | Draws / moves the shape preview |
-| Select | Index + middle finger | Moves cursor without drawing; hover over a toolbar button ~0.8s to select it |
+| Select | Index + middle finger | Moves cursor without drawing |
 | Idle | Open palm or closed fist | Pen lifted, nothing drawn |
+
+Finger detection compares distances from the wrist, so it works whether your
+hand points up, sideways or down.
 
 ## 2D mode
 
-A toolbar across the top of the video feed gives you:
+A kid-friendly UI on top of the video feed gives you:
 
-- **Colors** — 9 swatches (red, orange, yellow, green, cyan, blue, purple, white, black)
-- **Tools** — pen, line, rectangle, circle
-- **Brush sizes** — 4 preset thicknesses
-- **Eraser**, **Undo**, **Clear**, **Save**, and a button to jump to **3D** mode
+- **Tools** (top) — pen, line, box, circle, eraser
+- **Brush sizes** — small, medium, big
+- **Undo**, **Clear**, **Save** (with a star-confetti celebration), **3D** and **Exit**
+- **Colors** (left) — red, orange, yellow, green, blue, purple, pink, white and a rainbow pen
 
-Select a tool/color by holding the "select" gesture (index + middle finger)
-over its button until the yellow ring completes. Switch to "draw" gesture
-(index finger only) to draw, or drag out a shape start-to-end point for
-line/rectangle/circle tools.
+To pick anything, point at its button with one or two fingers and hold still
+until the pink ring fills (~0.8s). Draw with the index finger only, or drag out
+a shape start-to-end point for line/box/circle tools. Everything can be done
+by hand; the keyboard is optional.
 
 Keyboard shortcuts (with the video window focused):
 - `Q` / `Esc` — quit
@@ -106,8 +109,7 @@ Draw in air/
 ├── gestures.py          finger-pattern -> gesture classification
 ├── tools.py             2D toolbar layout, hit-testing, rendering
 ├── canvas2d.py           2D air-drawing app
-├── canvas3d.py           3D air-drawing app (OpenGL)
-├── config.py             colors, sizes, camera/window settings
+├── canvas3d.py           3D air-drawing app (OpenGL)├── config.py             colors, sizes, camera/window settings
 ├── requirements.txt
 ├── run.bat / run.sh      one-click setup + launch
 └── saved_drawings/       PNG exports (created on first save)

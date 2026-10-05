@@ -2,3 +2,7 @@
 __pycache__/
 *.pyc
 *_detected.*
+# downloaded on first run
+models/
+# remembered faces are personal data - keep them off GitHub
+people/
