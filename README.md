@@ -26,6 +26,8 @@ AI applications.
 | [Dino run](<Dino run>) | Endless-runner clone of the Chrome offline dinosaur game. |
 | [Flappy Bird](<Flappy Bird>) | Flappy Bird clone built with pygame. |
 | [Snakes games](<Snakes games>) | Classic Snake with arrow key/WASD controls, pause, and restart. |
+| [Ice cream catch](Ice_cream_catch) | Webcam party game — catch falling ice cream on a cone balanced on your head (OpenCV + MediaPipe face tracking, multiplayer). |
+| [Food slice game](Food_slice_game) | Webcam fruit-slicing game — swipe your fingertip to cut fruit flying up the screen (OpenCV + MediaPipe hand tracking). |
 | [3D Environment](<3D Environment>) | Placeholder — not yet implemented. |
 
 ### Terminal & UI tools
@@ -59,6 +61,38 @@ directly, e.g.:
 cd "Snakes games"
 pip install pygame
 python snake_game.py
+```
+
+```bash
+cd Care_Rase
+pip install pygame
+python main.py
+```
+
+Webcam-based games ([Ice cream catch](Ice_cream_catch), [Food slice game](Food_slice_game))
+need OpenCV + MediaPipe, which only support Python 3.9–3.12. Use the included
+one-click scripts, which create a `.venv` and install everything automatically:
+
+```bash
+cd Ice_cream_catch
+run.bat              # Windows
+# or: chmod +x run.sh && ./run.sh   (macOS/Linux)
+```
+
+```bash
+cd Food_slice_game
+run.bat              # Windows
+# or: chmod +x run.sh && ./run.sh   (macOS/Linux)
+```
+
+Or set them up manually like any other venv-based project:
+
+```bash
+cd Ice_cream_catch
+python -m venv .venv
+.venv\Scripts\activate      # macOS/Linux: source .venv/bin/activate
+pip install -r requirements.txt
+python main.py               # or: python main.py --camera 1
 ```
 
 Simple terminal projects (ATM, Calculator terminal, Grading System, Tic-Tac-Toe)
