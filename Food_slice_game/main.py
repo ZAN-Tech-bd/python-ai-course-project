@@ -298,7 +298,10 @@ class PillButton:
 # ---------------------------------------------------------------- game
 class FoodSliceGame:
     def __init__(self, camera_index=0):
-        self.cap = cv2.VideoCapture(camera_index)
+        if os.name == "nt":
+            self.cap = cv2.VideoCapture(camera_index, cv2.CAP_DSHOW)
+        else:
+            self.cap = cv2.VideoCapture(camera_index)
         self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, FRAME_WIDTH)
         self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, FRAME_HEIGHT)
         ok, frame = self.cap.read()
