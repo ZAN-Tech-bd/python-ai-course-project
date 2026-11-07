@@ -7,6 +7,11 @@ name, color and score (Bunny, Kitty, Puppy, Froggy, Panda and Tiger, up to 6).
 
 Built with OpenCV + MediaPipe face detection and Pillow (cartoon graphics).
 
+> **Chrome extension version:** [`chrome_extension/`](chrome_extension/README.md) runs the
+> game in Chrome/Edge on any PC with no Python needed, and adds Easy/Super modes, power-ups
+> (rainbow giant cone, snowflake slow motion), a team goal, streaks, an ice cream party,
+> animal ears, sounds and mouse play.
+
 ## Quick start
 
 Requires Python 3.9–3.12 (MediaPipe doesn't support newer versions yet). A
